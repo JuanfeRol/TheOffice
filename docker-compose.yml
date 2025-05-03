@@ -5,6 +5,8 @@ services:
     networks: 
       - red_Ventas
     restart: always
+    ports:
+      - "1631:631"
 
   worker2_ventas:    
     image: workers
@@ -12,6 +14,8 @@ services:
     networks: 
       - red_Ventas
     restart: always
+    ports:
+      - "1632:631"
 
   worker3_ventas:    
     image: workers
@@ -19,6 +23,8 @@ services:
     networks: 
       - red_Ventas
     restart: always
+    ports:
+      - "1633:631"
   
   worker4_ventas:    
     image: workers
@@ -26,6 +32,8 @@ services:
     networks: 
       - red_Ventas
     restart: always
+    ports:
+      - "1634:631"
   
   worker5_ventas:    
     image: workers
@@ -33,13 +41,35 @@ services:
     networks: 
       - red_Ventas
     restart: always
+    ports:
+      - "1635:631"
   
+  impresora1_ventas:
+    image: printers
+    container_name: Impresora1_Ventas
+    networks:
+      - red_Ventas
+    restart: always
+    ports:
+      - "1660:631"
+
+  impresora2_ventas:
+    image: printers
+    container_name: Impresora2_Ventas
+    networks:
+      - red_Ventas
+    restart: always
+    ports:
+      - "1661:631"
+
   worker1_soporte:    
     image: workers
     container_name: Worker1_Soporte
     networks: 
       - red_Soporte
     restart: always
+    ports:
+      - "1636:631"
 
   worker2_soporte:
     image: workers
@@ -47,6 +77,8 @@ services:
     networks:
       - red_Soporte
     restart: always
+    ports:
+      - "1637:631"
 
   worker3_soporte:
     image: workers
@@ -54,6 +86,8 @@ services:
     networks: 
       - red_Soporte
     restart: always
+    ports:
+      - "1638:631"
 
   worker4_soporte:
     image: workers
@@ -61,6 +95,8 @@ services:
     networks: 
       - red_Soporte
     restart: always
+    ports:
+      - "1639:631"
 
   worker5_soporte:
     image: workers
@@ -68,6 +104,8 @@ services:
     networks:
       - red_Soporte
     restart: always
+    ports:
+      - "1640:631"
 
   worker1_conta:
     image: workers
@@ -75,6 +113,8 @@ services:
     networks:
       - red_Contabilidad
     restart: always
+    ports:
+      - "1641:631"
 
   worker2_conta:
     image: workers
@@ -82,6 +122,8 @@ services:
     networks:
       - red_Contabilidad
     restart: always
+    ports:
+      - "1642:631"
 
   worker3_conta:
     image: workers
@@ -89,6 +131,8 @@ services:
     networks: 
       - red_Contabilidad
     restart: always
+    ports:
+      - "1643:631"
 
   worker4_conta:
     image: workers
@@ -96,6 +140,8 @@ services:
     networks: 
       - red_Contabilidad
     restart: always
+    ports:
+      - "1644:631"
 
   worker5_conta:
     image: workers
@@ -103,6 +149,8 @@ services:
     networks:
       - red_Contabilidad
     restart: always
+    ports:
+      - "1645:631"
 
   worker1_gerencia:
     image: workers
@@ -110,6 +158,8 @@ services:
     networks:
       - red_Gerencia
     restart: always
+    ports:
+      - "1646:631"
 
   worker2_gerencia:
     image: workers
@@ -117,6 +167,8 @@ services:
     networks:
       - red_Gerencia
     restart: always
+    ports:
+      - "1647:631"
 
   worker3_gerencia:
     image: workers
@@ -124,6 +176,8 @@ services:
     networks:
       - red_Gerencia
     restart: always
+    ports:
+      - "1648:631"
 
   worker4_gerencia:
     image: workers
@@ -131,6 +185,8 @@ services:
     networks:
       - red_Gerencia
     restart: always
+    ports:
+      - "1649:631"
 
   worker5_gerencia:
     image: workers
@@ -138,6 +194,8 @@ services:
     networks:
       - red_Gerencia
     restart: always
+    ports:
+      - "1650:631"
 
   worker1_recursos:
     image: workers
@@ -145,6 +203,8 @@ services:
     networks:
       - red_RecursosHumanos
     restart: always
+    ports:
+      - "1651:631"
 
   worker2_recursos:
     image: workers
@@ -152,6 +212,8 @@ services:
     networks:
       - red_RecursosHumanos
     restart: always
+    ports:
+      - "1652:631"
 
   worker3_recursos:
     image: workers
@@ -159,6 +221,8 @@ services:
     networks:
       - red_RecursosHumanos
     restart: always
+    ports:
+      - "1653:631"
 
   worker4_recursos:
     image: workers
@@ -166,6 +230,8 @@ services:
     networks:
       - red_RecursosHumanos
     restart: always
+    ports:
+      - "1654:631"
 
   worker5_recursos:
     image: workers
@@ -173,6 +239,8 @@ services:
     networks:
       - red_RecursosHumanos
     restart: always
+    ports:
+      - "1655:631"
 
 networks:
   red_Ventas:

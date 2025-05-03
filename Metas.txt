@@ -1,0 +1,8 @@
+Se logro ejecutar el servicio cups en cada dispositivos
+ademas de crear impresoras.
+
+Lo siguiente es crear impresoras para cada departamento
+cuidando el uso de puertos consecutivo.
+
+Ademas se debera lograr que las impresoras se compartan 
+en la red.

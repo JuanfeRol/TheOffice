@@ -6,5 +6,40 @@ services:
       - red_Ventas
     restart: always
 
+  worker2_ventas:    
+    image: workers
+    container_name: Worker2_Ventas
+    networks: 
+      - red_Ventas
+    restart: always
+
+  worker3_ventas:    
+    image: workers
+    container_name: Worker3_Ventas
+    networks: 
+      - red_Ventas
+    restart: always
+  
+  worker4_ventas:    
+    image: workers
+    container_name: Worker4_Ventas
+    networks: 
+      - red_Ventas
+    restart: always
+  
+  worker5_ventas:    
+    image: workers
+    container_name: Worker5_Ventas
+    networks: 
+      - red_Ventas
+    restart: always
+  
+  worker1_soporte:    
+    image: workers
+    container_name: Worker1_Soporte
+    networks: 
+      - red_Soporte
+    restart: always
 networks:
   red_Ventas:
+  red_Soporte:

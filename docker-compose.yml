@@ -41,6 +41,41 @@ services:
       - red_Soporte
     restart: always
 
+  worker1_conta:
+    image: workers
+    container_name: Worker1_Contabilidad
+    networks:
+      - red_Contabilidad
+    restart: always
+
+  worker2_conta:
+    image: workers
+    container_name: Worker2_Contabilidad
+    networks:
+      - red_Contabilidad
+    restart: always
+
+  worker3_conta:
+    image: workers
+    container_name: Worker3_Contabilidad
+    networks: 
+      - red_Contabilidad
+    restart: always
+
+  worker4_conta:
+    image: workers
+    container_name: Worker4_Contabilidad
+    networks: 
+      - red_Contabilidad
+    restart: always
+
+  worker5_conta:
+    image: workers
+    container_name: Worker5_Contabilidad
+    networks:
+      - red_Contabilidad
+    restart: always
+
 networks:
   red_Ventas:
     ipam:
@@ -52,7 +87,6 @@ networks:
       driver: default
       config:
         - subnet: "192.168.1.16/28"
-
   red_Contabilidad:    
     ipam:
       driver: default

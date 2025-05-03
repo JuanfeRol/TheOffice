@@ -41,6 +41,34 @@ services:
       - red_Soporte
     restart: always
 
+  worker2_soporte:
+    image: workers
+    container_name: Worker2_Soporte
+    networks:
+      - red_Soporte
+    restart: always
+
+  worker3_soporte:
+    image: workers
+    container_name: Worker3_Soporte
+    networks: 
+      - red_Soporte
+    restart: always
+
+  worker4_soporte:
+    image: workers
+    container_name: Worker4_Soporte
+    networks: 
+      - red_Soporte
+    restart: always
+
+  worker5_soporte:
+    image: workers
+    container_name: Worker5_Soporte
+    networks:
+      - red_Soporte
+    restart: always
+
   worker1_conta:
     image: workers
     container_name: Worker1_Contabilidad

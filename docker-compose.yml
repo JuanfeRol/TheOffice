@@ -111,6 +111,41 @@ services:
       - red_Gerencia
     restart: always
 
+  worker1_recursos:
+    image: workers
+    container_name: Worker1_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+
+  worker2_recursos:
+    image: workers
+    container_name: Worker2_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+
+  worker3_recursos:
+    image: workers
+    container_name: Worker3_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+
+  worker4_recursos:
+    image: workers
+    container_name: Worker4_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+
+  worker5_recursos:
+    image: workers
+    container_name: Worker5_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+
 networks:
   red_Ventas:
     ipam:
@@ -132,4 +167,9 @@ networks:
       driver: default
       config:
         - subnet: "192.168.1.48/28"
+  red_RecursosHumanos:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.1.64/28"
 

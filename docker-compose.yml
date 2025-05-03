@@ -1,0 +1,10 @@
+services:
+  worker1_ventas:    
+    image: workers
+    container_name: Worker1_Ventas
+    networks: 
+      - red_Ventas
+    restart: always
+
+networks:
+  red_Ventas:

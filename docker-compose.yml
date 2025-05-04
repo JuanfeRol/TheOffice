@@ -107,6 +107,24 @@ services:
     ports:
       - "1640:631"
 
+  impresora1_soporte:
+    image: printers
+    container_name: Impresora1_Soporte
+    networks:
+      - red_Soporte
+    restart: always
+    ports:
+      - "1662:631"
+
+  impresora2_soporte:
+    image: printers
+    container_name: Impresora2_Soporte
+    networks:
+      - red_Soporte
+    restart: always
+    ports:
+      - "1663:631"
+
   worker1_conta:
     image: workers
     container_name: Worker1_Contabilidad
@@ -151,6 +169,24 @@ services:
     restart: always
     ports:
       - "1645:631"
+
+  impresora1_conta:
+    image: printers
+    container_name: Impresora1_Contabilidad
+    networks:
+      - red_Contabilidad
+    restart: always
+    ports:
+      - "1664:631"
+
+  impresora2_conta:
+    image: printers
+    container_name: Impresora2_Contabilidad
+    networks:
+      - red_Contabilidad
+    restart: always
+    ports:
+      - "1665:631"
 
   worker1_gerencia:
     image: workers
@@ -197,6 +233,24 @@ services:
     ports:
       - "1650:631"
 
+  impresora1_gerencia:
+    image: printers
+    container_name: Impresora1_Gerencia
+    networks:
+      - red_Gerencia
+    restart: always
+    ports:
+      - "1666:631"
+
+  impresora2_gerencia:
+    image: printers
+    container_name: Impresora2_Gerencia
+    networks:
+      - red_Gerencia
+    restart: always
+    ports:
+      - "1667:631"
+
   worker1_recursos:
     image: workers
     container_name: Worker1_RecursosHumanos
@@ -241,6 +295,24 @@ services:
     restart: always
     ports:
       - "1655:631"
+
+  impresora1_recursos:
+    image: printers
+    container_name: Impresora1_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+    ports:
+      - "1668:631"
+
+  impresora2_recursos:
+    image: printers
+    container_name: Impresora2_RecursosHumanos
+    networks:
+      - red_RecursosHumanos
+    restart: always
+    ports:
+      - "1669:631"
 
 networks:
   red_Ventas:

@@ -1,6 +1,6 @@
 services:
   worker1_ventas:    
-    image: workers
+    image: workers_ventas
     container_name: Worker1_Ventas
     networks: 
       - red_Ventas
@@ -9,7 +9,7 @@ services:
       - "1631:631"
 
   worker2_ventas:    
-    image: workers
+    image: workers_ventas
     container_name: Worker2_Ventas
     networks: 
       - red_Ventas
@@ -18,7 +18,7 @@ services:
       - "1632:631"
 
   worker3_ventas:    
-    image: workers
+    image: workers_ventas
     container_name: Worker3_Ventas
     networks: 
       - red_Ventas
@@ -27,7 +27,7 @@ services:
       - "1633:631"
   
   worker4_ventas:    
-    image: workers
+    image: workers_ventas
     container_name: Worker4_Ventas
     networks: 
       - red_Ventas
@@ -36,7 +36,7 @@ services:
       - "1634:631"
   
   worker5_ventas:    
-    image: workers
+    image: workers_ventas
     container_name: Worker5_Ventas
     networks: 
       - red_Ventas
@@ -63,7 +63,7 @@ services:
       - "1661:631"
 
   worker1_soporte:    
-    image: workers
+    image: workers_soporte
     container_name: Worker1_Soporte
     networks: 
       - red_Soporte
@@ -72,7 +72,7 @@ services:
       - "1636:631"
 
   worker2_soporte:
-    image: workers
+    image: workers_soporte
     container_name: Worker2_Soporte
     networks:
       - red_Soporte
@@ -81,7 +81,7 @@ services:
       - "1637:631"
 
   worker3_soporte:
-    image: workers
+    image: workers_soporte
     container_name: Worker3_Soporte
     networks: 
       - red_Soporte
@@ -90,7 +90,7 @@ services:
       - "1638:631"
 
   worker4_soporte:
-    image: workers
+    image: workers_soporte
     container_name: Worker4_Soporte
     networks: 
       - red_Soporte
@@ -99,7 +99,7 @@ services:
       - "1639:631"
 
   worker5_soporte:
-    image: workers
+    image: workers_soporte
     container_name: Worker5_Soporte
     networks:
       - red_Soporte
@@ -126,7 +126,7 @@ services:
       - "1663:631"
 
   worker1_conta:
-    image: workers
+    image: workers_contabilidad
     container_name: Worker1_Contabilidad
     networks:
       - red_Contabilidad
@@ -135,7 +135,7 @@ services:
       - "1641:631"
 
   worker2_conta:
-    image: workers
+    image: workers_contabilidad
     container_name: Worker2_Contabilidad
     networks:
       - red_Contabilidad
@@ -144,7 +144,7 @@ services:
       - "1642:631"
 
   worker3_conta:
-    image: workers
+    image: workers_contabilidad
     container_name: Worker3_Contabilidad
     networks: 
       - red_Contabilidad
@@ -153,7 +153,7 @@ services:
       - "1643:631"
 
   worker4_conta:
-    image: workers
+    image: workers_contabilidad
     container_name: Worker4_Contabilidad
     networks: 
       - red_Contabilidad
@@ -162,7 +162,7 @@ services:
       - "1644:631"
 
   worker5_conta:
-    image: workers
+    image: workers_contabilidad
     container_name: Worker5_Contabilidad
     networks:
       - red_Contabilidad
@@ -189,7 +189,7 @@ services:
       - "1665:631"
 
   worker1_gerencia:
-    image: workers
+    image: workers_gerencia
     container_name: Worker1_Gerencia
     networks:
       - red_Gerencia
@@ -198,7 +198,7 @@ services:
       - "1646:631"
 
   worker2_gerencia:
-    image: workers
+    image: workers_gerencia
     container_name: Worker2_Gerencia
     networks:
       - red_Gerencia
@@ -207,7 +207,7 @@ services:
       - "1647:631"
 
   worker3_gerencia:
-    image: workers
+    image: workers_gerencia
     container_name: Worker3_Gerencia
     networks:
       - red_Gerencia
@@ -216,7 +216,7 @@ services:
       - "1648:631"
 
   worker4_gerencia:
-    image: workers
+    image: workers_gerencia
     container_name: Worker4_Gerencia
     networks:
       - red_Gerencia
@@ -225,7 +225,7 @@ services:
       - "1649:631"
 
   worker5_gerencia:
-    image: workers
+    image: workers_gerencia
     container_name: Worker5_Gerencia
     networks:
       - red_Gerencia
@@ -252,7 +252,7 @@ services:
       - "1667:631"
 
   worker1_recursos:
-    image: workers
+    image: workers_recursos
     container_name: Worker1_RecursosHumanos
     networks:
       - red_RecursosHumanos
@@ -261,7 +261,7 @@ services:
       - "1651:631"
 
   worker2_recursos:
-    image: workers
+    image: workers_recursos
     container_name: Worker2_RecursosHumanos
     networks:
       - red_RecursosHumanos
@@ -270,7 +270,7 @@ services:
       - "1652:631"
 
   worker3_recursos:
-    image: workers
+    image: workers_recursos
     container_name: Worker3_RecursosHumanos
     networks:
       - red_RecursosHumanos
@@ -279,7 +279,7 @@ services:
       - "1653:631"
 
   worker4_recursos:
-    image: workers
+    image: workers_recursos
     container_name: Worker4_RecursosHumanos
     networks:
       - red_RecursosHumanos
@@ -288,7 +288,7 @@ services:
       - "1654:631"
 
   worker5_recursos:
-    image: workers
+    image: workers_recursos
     container_name: Worker5_RecursosHumanos
     networks:
       - red_RecursosHumanos
@@ -315,26 +315,31 @@ services:
       - "1669:631"
 
 networks:
+
   red_Ventas:
     ipam:
       driver: default
       config:
         - subnet: "192.168.1.0/28"
+
   red_Soporte:    
     ipam:
       driver: default
       config:
         - subnet: "192.168.1.16/28"
+
   red_Contabilidad:    
     ipam:
       driver: default
       config:
         - subnet: "192.168.1.32/28"
+
   red_Gerencia:
     ipam:
       driver: default
       config:
         - subnet: "192.168.1.48/28"
+
   red_RecursosHumanos:
     ipam:
       driver: default

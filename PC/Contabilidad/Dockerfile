@@ -8,8 +8,11 @@ RUN apt update && \
 
 COPY startup.sh /usr/local/bin/startup.sh
 COPY cupsd.conf /etc/cups/cupsd.conf  
+COPY addPrinters.sh /home
+
     
 RUN chmod +x /usr/local/bin/startup.sh
+RUN chmod +x /home/addPrinters.sh
     
 EXPOSE 631
     

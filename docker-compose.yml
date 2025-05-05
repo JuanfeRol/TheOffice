@@ -314,6 +314,53 @@ services:
     ports:
       - "1669:631"
 
+  adminred:
+    image: admin
+    container_name: adminred
+    hostname: adminred
+    networks:
+      - red_RecursosHumanos
+      - red_Ventas
+      - red_Soporte
+      - red_Gerencia
+      - red_Contabilidad
+    volumes:
+      - ./mailserver/config:/mail-config
+    tty: true
+    stdin_open: true
+
+  mailserver:
+    image: mailserver/docker-mailserver
+    container_name: mailserver
+    hostname: "mailserver" 
+    domainname: "lol.com"
+    networks:
+      - red_RecursosHumanos
+      - red_Ventas
+      - red_Soporte
+      - red_Gerencia
+      - red_Contabilidad
+    restart: unless-stopped
+    ports:
+      - "25:25"
+      - "143:143"
+      - "587:587"
+      - "993:993"
+    environment:
+      - ENABLE_SPAMASSASSIN=1
+      - SPAMASSASSIN_SPAM_TO_INBOX=1
+      - ENABLE_CLAMAV=1
+      - ENABLE_POSTGREY=1
+      - ENABLE_FAIL2BAN=0
+      - ENABLE_SASLAUTHD=1
+      - ONE_DIR=1
+      - TZ=America/New_York
+    volumes:
+      - ./mailserver/data/:/var/mail/
+      - ./mailserver/state/:/var/mail-state/
+      - ./mailserver/logs/:/var/log/mail/
+      - ./mailserver/config/:/tmp/docker-mailserver/
+
 networks:
 
   red_Ventas:

@@ -1,0 +1,12 @@
+mailserver/data/*
+!mailserver/data/.keep
+
+mailserver/state/*
+!mailserver/state/.keep
+
+mailserver/logs/*
+!mailserver/logs/.keep
+
+mailserver/config/*
+!mailserver/config/.keep
+

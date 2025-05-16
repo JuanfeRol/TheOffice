@@ -29,3 +29,12 @@ http://127.0.0.1:1661
 -En Metas.txt se encuentra los siguiente a realizar
 
 -Con los nuevos cambios al ingresar a un contenedor con exec, en el directorio /home del contenedor se encuentra el script addPrinters.sh, el cual agrega al ordenador las impresoras de su respectiva red.
+
+Comandos importantes:
+smbclient //samba_server/shared -U smbuser%smbpass : acceder al servidor SAMBA desde los ordenadores
+
+ver contenido tar
+tar -tzf file
+
+descomprimir
+tar -xzf file

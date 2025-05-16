@@ -1,8 +1,8 @@
 services:
 
-  samba_backup:
+  sambabackup:
     image: backupservice
-    container_name: Samba_Backup
+    container_name: SambaBackup
     networks:
       - red_Ventas
     volumes:

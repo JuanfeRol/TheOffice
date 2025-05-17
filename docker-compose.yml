@@ -4,7 +4,7 @@ services:
     image: backupservice
     container_name: SambaBackup
     networks:
-      - red_Ventas
+      - red_Admin
     volumes:
       - samba_backups:/backup
     cap_add:
@@ -15,19 +15,27 @@ services:
       - apparmor:unconfined
     privileged: true  
     restart: always
+    ports:
+      - "8000:8000"
 
 
   sambaserver:
     image: dperson/samba
     container_name: SambaServer
     networks:
+      - red_Admin
       - red_Ventas
+      - red_Soporte
+      - red_Gerencia
+      - red_Contabilidad
+      - red_RecursosHumanos
     volumes:
       - ./sambaserver/shared_data:/shared
     command: >
       -u "smbuser;smbpass" 
       -s "shared;/shared;yes;no;no;smbuser"
     restart: always
+
 
   mailserver:
     image: mailserver/docker-mailserver
@@ -40,6 +48,7 @@ services:
       red_Soporte:
       red_Gerencia:
       red_Contabilidad:
+      red_Admin:
     restart: always
     ports:
       - "25:25"
@@ -387,6 +396,7 @@ services:
       - red_Soporte
       - red_Gerencia
       - red_Contabilidad
+      - red_Admin
     volumes:
       - ./mailserver/config:/mail-config
     tty: true
@@ -423,6 +433,12 @@ networks:
       driver: default
       config:
         - subnet: "192.168.1.64/28"
+
+  red_Admin:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.1.80/28"
 
 volumes:
   samba_backups:

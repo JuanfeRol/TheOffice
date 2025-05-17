@@ -12,7 +12,7 @@ mkdir -p /mnt/samba_shared
 
 # Montar recurso compartido
 mount -t cifs //samba_server/shared /mnt/samba_shared \
-  -o username=smbuser,password=smbpass,vers=1.0
+  -o username=smbuser,password=smbpass,vers=3.0
 
 # Verificar si se montó correctamente
 if mount | grep "/mnt/samba_shared" > /dev/null; then

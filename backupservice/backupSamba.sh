@@ -11,7 +11,7 @@ BACKUP_NAME="samba_backup_$DATE.tar.gz"
 mkdir -p /mnt/sambabackup
 
 
-# Montar recurso si no está montado
+# Montar recurso si no está montado VERSION 3
 if ! mountpoint -q "$MOUNT_POINT"; then
   mount -t cifs //${SAMBA_SERVER}/${SAMBA_SHARE} $MOUNT_POINT \
     -o credentials=$CRED_FILE,vers=3.0,iocharset=utf8
